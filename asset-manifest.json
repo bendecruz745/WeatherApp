@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/WeatherGrabber/static/css/main.2572d6d9.css",
+    "main.js": "/WeatherGrabber/static/js/main.c8c94b8f.js",
+    "static/js/787.c885b822.chunk.js": "/WeatherGrabber/static/js/787.c885b822.chunk.js",
+    "index.html": "/WeatherGrabber/index.html",
+    "main.2572d6d9.css.map": "/WeatherGrabber/static/css/main.2572d6d9.css.map",
+    "main.c8c94b8f.js.map": "/WeatherGrabber/static/js/main.c8c94b8f.js.map",
+    "787.c885b822.chunk.js.map": "/WeatherGrabber/static/js/787.c885b822.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2572d6d9.css",
+    "static/js/main.c8c94b8f.js"
+  ]
+}
