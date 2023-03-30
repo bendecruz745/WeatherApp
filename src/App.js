@@ -58,7 +58,7 @@ function App() {
           className="mt-0"
           type="text"
           value={inputValue}
-          placeholder="Enter a Suburb"
+          placeholder="Location"
           onKeyDown={(event) => {
             if (event.key === "Enter") {
               handleSubmit(event);

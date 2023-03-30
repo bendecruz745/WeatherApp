@@ -3,14 +3,7 @@ import React, { useState, useEffect } from "react";
 
 function LocationListItem({ locationItem }) {
   const handleClick = () => {
-    console.log(
-      "Yo you just clicked on " +
-        locationItem.Name +
-        " located at " +
-        locationItem.region +
-        " in the country of " +
-        locationItem.country
-    );
+    console.log(locationItem);
   };
   return (
     <div className="locationItem" onClick={handleClick}>
