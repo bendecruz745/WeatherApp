@@ -1,6 +1,6 @@
 {
-  "homepage": "https://bendecruz745.github.io/WeatherGrabber",
-  "name": "weathergrabber",
+  "homepage": "https://bendecruz745.github.io/WeatherApp",
+  "name": "weatherapp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
