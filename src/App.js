@@ -14,7 +14,7 @@ function App() {
   const fetchLocationData = async (cityToSearch) => {
     setDisableButton(true);
     const response = await fetch(
-      `http://api.weatherapi.com/v1/search.json?key=c41e0e9249d94ae59f462618233003&q=${cityToSearch}`
+      `https://api.weatherapi.com/v1/search.json?key=c41e0e9249d94ae59f462618233003&q=${cityToSearch}`
     );
     const jsonData = await response.json();
     setLocationData(jsonData);
@@ -24,7 +24,7 @@ function App() {
   const fetchWeatherData = async (location) => {
     setDisableButton(true);
     const response = await fetch(
-      `http://api.weatherapi.com/v1/current.json?key=c41e0e9249d94ae59f462618233003&q=${location.lat}, ${location.lon}`
+      `https://api.weatherapi.com/v1/current.json?key=c41e0e9249d94ae59f462618233003&q=${location.lat}, ${location.lon}`
     );
     const jsonData = await response.json();
     setWeatherData(jsonData);
