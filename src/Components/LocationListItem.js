@@ -6,7 +6,7 @@ function LocationListItem({ locationItem, fetchWeatherData }) {
     fetchWeatherData(locationItem);
   };
   return (
-    <div className="locationItem" onClick={handleClick}>
+    <div className="locationItem m-1" onClick={handleClick}>
       {locationItem.name}, {locationItem.region}, {locationItem.country}
     </div>
   );

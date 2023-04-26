@@ -21,8 +21,11 @@ function Main({ weatherData }) {
   return (
     <div className="weatherData p-3 border">
       <h1>
-        {weatherData.location.name}, {weatherData.location.region},
-        {weatherData.location.country}
+        {weatherData.location.name +
+          ", " +
+          weatherData.location.region +
+          ", " +
+          weatherData.location.country}
       </h1>
       <div className="weatherDisplay d-flex flex-column">
         <div className="localTime">
@@ -32,6 +35,14 @@ function Main({ weatherData }) {
         <div className="temperature d-flex justify-content-between align-items-center">
           Temperature: {temperature}°{degreesDisplay ? "C" : "F"}
           <Button onClick={toggleDegrees}>Toggle Degrees</Button>
+        </div>
+        <div className="currentForecast d-flex align-items-center">
+          Currently:{" "}
+          <img
+            src={weatherData.current.condition.icon}
+            alt="Weather Icon"
+          ></img>
+          {weatherData.current.condition.text}
         </div>
       </div>
     </div>
