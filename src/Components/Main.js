@@ -19,7 +19,7 @@ function Main({ weatherData }) {
   }, [degreesDisplay, weatherData]);
 
   return (
-    <div className="weatherData p-3 border">
+    <div className="weatherData p-3">
       <h1>
         {weatherData.location.name +
           ", " +
