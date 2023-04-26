@@ -1,9 +1,9 @@
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-function LocationListItem({ locationItem }) {
+function LocationListItem({ locationItem, fetchWeatherData }) {
   const handleClick = () => {
-    console.log(locationItem);
+    fetchWeatherData(locationItem);
   };
   return (
     <div className="locationItem" onClick={handleClick}>

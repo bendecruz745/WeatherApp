@@ -1,9 +1,18 @@
 body {
-  background-color: lightblue;
+  background-image: url("images/bg.png");
 }
 
 h1 {
   text-align: center;
+}
+
+.weatherData {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 25px;
+}
+
+.locationList {
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 .locationItem:hover {

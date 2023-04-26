@@ -8,13 +8,23 @@ import LocationListItem from "./Components/LocationListItem";
 function App() {
   const [inputValue, setInputValue] = useState("");
   const [disableButton, setDisableButton] = useState(false);
-  const [openDropdown, setOpen] = useState(false);
-  const [weatherData, setWeatherData] = useState({});
+  const [locationData, setLocationData] = useState({});
+  const [weatherData, setWeatherData] = useState();
 
-  const fetchWeatherData = async (cityToSearch) => {
+  const fetchLocationData = async (cityToSearch) => {
     setDisableButton(true);
     const response = await fetch(
       `http://api.weatherapi.com/v1/search.json?key=c41e0e9249d94ae59f462618233003&q=${cityToSearch}`
+    );
+    const jsonData = await response.json();
+    setLocationData(jsonData);
+    setDisableButton(false);
+  };
+
+  const fetchWeatherData = async (location) => {
+    setDisableButton(true);
+    const response = await fetch(
+      `http://api.weatherapi.com/v1/current.json?key=c41e0e9249d94ae59f462618233003&q=${location.lat}, ${location.lon}`
     );
     const jsonData = await response.json();
     setWeatherData(jsonData);
@@ -32,14 +42,10 @@ function App() {
     });
   };
 
-  const handleOpen = () => {
-    setOpen(!openDropdown);
-  };
-
   const handleSubmit = (event) => {
     if (inputValue) {
       let city = inputValue;
-      fetchWeatherData(city);
+      fetchLocationData(city);
     } else {
     }
   };
@@ -69,13 +75,17 @@ function App() {
           }}
         />
       </div>
-      <div>
-        {weatherData.length &&
-          weatherData.map((locationItem, index) => (
-            <LocationListItem locationItem={locationItem} key={index} />
+      <div className="locationList m-1">
+        {locationData.length &&
+          locationData.map((locationItem, index) => (
+            <LocationListItem
+              locationItem={locationItem}
+              key={index}
+              fetchWeatherData={fetchWeatherData}
+            />
           ))}
       </div>
-      <Main />
+      {weatherData && <Main weatherData={weatherData} />}
     </div>
   );
 }
