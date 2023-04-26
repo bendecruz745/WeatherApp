@@ -24,7 +24,7 @@ function App() {
   const fetchWeatherData = async (location) => {
     setDisableButton(true);
     const response = await fetch(
-      `https://api.weatherapi.com/v1/current.json?key=c41e0e9249d94ae59f462618233003&q=${location.name}, ${location.region}`
+      `https://api.weatherapi.com/v1/current.json?key=c41e0e9249d94ae59f462618233003&q=${location.lat},${location.lon}`
     );
     const jsonData = await response.json();
     setWeatherData(jsonData);
